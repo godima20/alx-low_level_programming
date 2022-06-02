@@ -1,10 +1,11 @@
 #include <stdio.h>
+
 /**
  * main - entry point of the program
  *
  * Description - prints and a piece of art is useful
  *
- * Return: Always 0
+ * Return: Always 1
  */
 int main(void)
 {
