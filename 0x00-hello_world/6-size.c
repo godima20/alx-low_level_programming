@@ -1,17 +1,21 @@
 #include <stdio.h>
-
 /**
- * main - entry point of the program
+ * main - entry point
  *
- * Description - prints various types of the computer
- *
- * Return: return always 0
+ * Return: always 0
  */
 int main(void)
 {
-	printf("Size of char: %d bytes\n", sizeof(char));
-	printf("Size of an int: %d bytes\n", sizeof(int));
-	printf("Size of a long int: %d bytes\n", sizeof(int));
-	printf("Size of a long long int: %d bytes\n", sizeof(int));
-	printf("Size of a float: %d bytes\n", sizeof(int));
+	char acharacter;
+	int ainteger;
+	long along;
+	long long alonglong;
+	float afloat;
+
+	printf("Size of a char: %lu byte(s)\n", sizeof(acharacter);
+	printf("Size of an int: %lu byte(s)\n", sizeof(ainteger);
+	printf("Size of a long int: %lu byte(s)\n", sizeof(along);
+	printf("Size of a long long int: %lu byte(s)", sizeof(alongalong);
+	printf("Size of a float: %lu byte(s)", sizeof(afloat);
 	return (0);
+}
