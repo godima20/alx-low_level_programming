@@ -2,7 +2,7 @@
 /**
  * main - entry point of the program
  *
- * Description - Prints all single numbers of base 10 
+ * Description - Prints all single numbers of base 10
  *
  * Return: Always return 0
  */
