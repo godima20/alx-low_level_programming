@@ -18,8 +18,8 @@ int main(void)
 			putchar(num2 +  '0');
 			if (num1 == 97 && num2 == 98)
 				continue;
-			putchar(',');
 			putchar(' ');
+			putchar(',');
 		}
 	}
 	putchar('\n');
