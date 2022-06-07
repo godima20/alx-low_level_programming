@@ -16,7 +16,7 @@ void times_table(void)
 			_putchar(',');
 			_putchar(' ');
 			result = num * times;
-			if (times <= 9)
+			if (times <= 8)
 				_putchar(' ');
 			else
 				_putchar((result / 10) + '0');
