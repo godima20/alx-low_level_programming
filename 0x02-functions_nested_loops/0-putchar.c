@@ -6,8 +6,8 @@
  *
  * Return: Always return 0
  */
-int main(void)
-{
+int main(char c)
+}
 	int _putchar(char c);
 
 	_putchar('\n');
