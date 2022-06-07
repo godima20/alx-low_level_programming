@@ -8,7 +8,7 @@
  */
 int main(void)
 {
-	int _putchar ('d');
+	int _putchar d;
 
 	_putchar('\n');
 	return (0);
