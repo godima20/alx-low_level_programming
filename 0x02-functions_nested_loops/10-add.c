@@ -6,13 +6,10 @@
  *
  * Return: Return the result
  */
-int add(int, int)
+int add(int num1, int num2)
 {
-	int num1, num2;
 	int result;
 
-	int result = int add(num1 + num2);
-	{
-		return(result);
-	}
+	result = num1 + num2;
+	return (result);
 }
