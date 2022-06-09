@@ -4,7 +4,7 @@
  */
 void print_most_numbers(void)
 {
-	char num1;
+	int num1;
 
 	for (num1 = 0; num1 <= 9; num1++)
 	{
