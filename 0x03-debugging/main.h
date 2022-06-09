@@ -4,5 +4,6 @@
 #include <stdio.h>
 
 void positive_or_negative(int i);
+largest_number(a, b, c);
 
 #endif /* MAIN_H */
