@@ -1,7 +1,8 @@
 #include "main.h"
 /**
- * _strcat - concanates the string pointed to by @src
- * including the terminating null byte
+ * *_strcat - concanates the string pointed to by @src
+ *	 including the terminating null byte to the end
+ *	 of the string pointed by @dest
  * @dest: a pointer to the string to be concaneted
  * @src: the source string to be appended to @dest
  */
