@@ -31,11 +31,13 @@ char *add_strings(char *n1, char *n2, char *r, int r_index)
 	}
 	if (tens && r_index >= 0)
 		*(r + r_index) = (tens % 10) + '0';
-	return (r + r_index);
-	}
-	else if (tens && r_index < 0);
-	return (0);
 	return (r + r_index + 1);
+}
+
+	else if
+	(tens && r_index < 0)
+	return (0)
+	return (r + r_index + 1)
 }
 /**
  * infinite_add - adds two numbers
