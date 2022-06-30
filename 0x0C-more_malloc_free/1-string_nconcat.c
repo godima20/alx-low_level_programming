@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * string_concat - concanates two strings using inputted
+ * string_nconcat - concanates two strings using inputted
  * number of bytes
  * @s1: the first string
  * @s2: the second string
