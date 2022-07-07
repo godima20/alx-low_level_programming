@@ -2,8 +2,8 @@
 #include <stdarg.h>
 /**
  * sum_them_all - Returns the sum all the parameters
- * @n: the number of parameters passed on the function 
- * @...: a variable number of parameters to claculate the 
+ * @n: the number of parameters passed on the function
+ * @...: a variable number of parameters to claculate the
  * sum of
  *
  * Return: if n == 0, 0. otherwise, the sum of all parameters
