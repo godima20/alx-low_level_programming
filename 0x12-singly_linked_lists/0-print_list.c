@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "lists.h"
-#include <typedef.h>
 /**
  * print_list - prints all elements in a list_t list
  * @h: A pointer to the list to iterate
