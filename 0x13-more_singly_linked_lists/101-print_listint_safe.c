@@ -84,7 +84,7 @@ size_t print_listint_safe(const listint_t *head)
 		while (tmp != NULL)
 		{
 			printf("[%p] %d\n", (void *)tmp, tmp->n);
-			num_nodes += 1
+			num_nodes += 1;
 				tmp = tmp->next;
 		}
 	}
