@@ -18,7 +18,7 @@ size_t dlistint_len(const dlistint_t *h)
 	return (elements);
 }
 /**
- * delete_dnodeint_at_index A function that deletes a node at index
+ * delete_dnodeint_at_index - A function that deletes a node at index
  * of a dlistint_t list
  * @head: double pointer to the head of the list
  * @index: The index of the node delete
