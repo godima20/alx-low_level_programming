@@ -25,12 +25,12 @@ size_t dlistint_len(const dlistint_t *h)
  *
  * Return: 1 for success, -1 for failure
  */
-int delete_dnodeint_at_index(dlisint_t **head, unsigned int index)
+int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
 	dlistint_t *current = *head;
 	unsigned int i = 0;
 
-	if (*head == NULL || dlistint_len(current)p < index + 1)
+	if (*head == NULL || dlistint_len(current) < index + 1)
 		return (-1);
 	if (!index)
 	{
