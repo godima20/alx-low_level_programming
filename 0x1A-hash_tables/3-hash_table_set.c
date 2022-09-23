@@ -9,35 +9,43 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int index, size;
-	hash_node_t *node *temp;
+	hash_node_t *door = NULL, *tmp = NULL;
+	unsigned long int hash = 0;
 
-	if (!key || !value || !ht)
+	if (!ht || !key || !*key || !value || !*value)
 		return (0);
-	size = ht->size;
-	index = key_index((const unsigned char *) key, size);
-	while(temp)
+
+	hash = key_index((unsigned char *) key, size);
+	tmp = ht->array[hash];
+	while(tmp != NULL)
 	{
-		if (temp && strcmp(key, temp->key) == 0)
+		if (strcmp(tmp->key) == 0)
 		{
 			free(tmp->value);
-			temp->value = strdup(value);
-			if (temp->value == NULL)
+			tmp->value = strdup(char *)(value);
+			if (!tmp->value)
 				return (0);
 			return (1);
 		}
-		temp = temp->next;
+		tmp = tmp->next;
 	}
-	node = malloc(sizeof(hash_node_t));
-	if (node == NULL)
+	door = malloc(sizeof(hash_node_t));
+	if (!door)
 		return (0);
-	node->key = strdup(key);
-	if (node->key == NULL)
+	door->key = strdup(char *)(key);
+	if (door->key == NULL)
+	{
+		free(door);
 		return (0);
-	node->value = strdup(value);
-	if (node->value == NULL)
+	}
+	door->value = strdup(value);
+	if (door->value == NULL)
+	{
+		free(door->key);
+		free(door);
 		return (0);
-	node->next = ht->array[index];
-	ht->array[index] = node;
+	}
+	door->next = ht->array[hash];
+	ht->array[hash] = door;
 	return (1);
 }
