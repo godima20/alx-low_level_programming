@@ -1,51 +1,65 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_set - add elements to hash table
- * @ht: hash table
- * @key: key
- * @value: value associated to the key to add
- * Return: 0(Fails) 1(success)
+ * add_n_hash - adds a node at the beginning of a hash at a given index
+ *
+ * @head: head of the hash linked list
+ * @key: key of the hash
+ * @value: value to store
+ * Return: head of the hash
  */
-int hash_table_set(hash_table_t *ht, const char *key, const char *value)
+hash_node_t *add_n_hash(hash_node_t **head, const char *key, const char *value)
 {
-	hash_node_t *door = NULL, *tmp = NULL;
-	unsigned long int hash = 0;
+	hash_node_t *tmp;
+	
+	tmp = *head;
 
-	if (!ht || !key || !*key || !value || !*value)
-		return (0);
-
-	hash = key_index((unsigned char *) key, size_t);
-	tmp = ht->array[hash];
-	while(tmp != NULL)
-	{
-		if (strcmp(tmp->key) == 0)
+	while (tmp != NULL)
+	{	
+		if (strcmp(key, tmp->key) == 0)
 		{
 			free(tmp->value);
-			tmp->value = strdup(char *)(value);
-			if (!tmp->value)
-				return (0);
-			return (1);
+			tmp->value = strdup(value);
+			return (*head);
 		}
 		tmp = tmp->next;
 	}
-	door = malloc(sizeof(hash_node_t));
-	if (!door)
+	
+	tmp = malloc(sizeof(hash_node_t));
+
+	if (tmp == NULL)
+		return (NULL);
+
+	tmp->key = strdup(key);
+	tmp->value = strdup(value);
+	tmp->next = *head;
+	*head = tmp;
+
+	return (*head);
+}
+
+/**
+ * hash_table_set - adds a hash (key, value) to a given hash table
+ *
+ * @ht: pointer to the hash table
+ * @key: key of the hash
+ * @value: value to store
+ * Return: 1 if successes, 0 if fails
+ */
+int hash_table_set(hash_table_t *ht, const char *key, const char *value)
+{
+	unsigned long int k_index;
+
+	if (ht == NULL)
 		return (0);
-	door->key = strdup(char *)(key);
-	if (door->key == NULL)
-	{
-		free(door);
+
+	if (key == NULL || *key == '\0')
 		return (0);
-	}
-	door->value = strdup(value);
-	if (door->value == NULL)
-	{
-		free(door->key);
-		free(door);
+
+	k_index = key_index((unsigned char *)key, ht->size);
+
+	if (add_n_hash(&(ht->array[k_index]), key, value) == NULL)
 		return (0);
-	}
-	door->next = ht->array[hash];
-	ht->array[hash] = door;
+
 	return (1);
 }
